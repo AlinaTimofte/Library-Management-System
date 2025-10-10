@@ -1,11 +1,22 @@
-<script setup></script>
-
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <nav>
+    <router-link to="/books">Books</router-link> |
+    <router-link to="/authors">Authors</router-link> |
+    <router-link to="/borrowers">Borrowers</router-link> |
+    <router-link to="/stats">Stats</router-link>
+  </nav>
+
+  <router-view />
 </template>
 
-<style scoped></style>
+<style>
+nav {
+  background-color: #222;
+  padding: 10px;
+}
+a {
+  color: white;
+  margin-right: 10px;
+  text-decoration: none;
+}
+</style>

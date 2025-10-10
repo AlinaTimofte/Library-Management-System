@@ -1,0 +1,32 @@
+package com.example.library.controller;
+
+import com.example.library.model.Book;
+import com.example.library.repository.BookRepository;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/books")
+@CrossOrigin(origins="http://localhost:5173")
+public class BookController {
+    private final BookRepository repo;
+    public BookController(BookRepository repo){this.repo=repo;}
+
+    @GetMapping public List<Book> all(){return repo.findAll();}
+    @GetMapping("/{id}") public Book one(@PathVariable Long id){return repo.findById(id).orElseThrow();}
+    @PostMapping public Book create(@RequestBody Book b){return repo.save(b);}
+    @PutMapping("/{id}") public Book update(@PathVariable Long id,@RequestBody Book b){b.setId(id);return repo.save(b);}
+    @DeleteMapping("/{id}") public void delete(@PathVariable Long id){repo.deleteById(id);}
+
+    // CUSTOM 1: top cele mai împrumutate
+    @GetMapping("/most-borrowed")
+    public List<Book> mostBorrowed(@RequestParam(defaultValue="5") int top){
+        return repo.findMostBorrowed(PageRequest.of(0, top));
+    }
+
+    @GetMapping("/search")
+    public List<Book> search(@RequestParam String q){
+        return repo.findByTitleContainingIgnoreCase(q);
+    }
+}
