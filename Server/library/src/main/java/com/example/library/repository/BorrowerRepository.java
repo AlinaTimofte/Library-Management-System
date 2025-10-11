@@ -8,4 +8,5 @@ import java.util.*;
 public interface BorrowerRepository extends JpaRepository<Borrower, Long> {
     @Query("select br from Borrower br where br.currentBook is not null and br.dueAt < :now")
     List<Borrower> findOverdue(@Param("now") LocalDateTime now);
+    List<Borrower> findByCurrentBookIsNotNull();
 }

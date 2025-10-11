@@ -15,6 +15,7 @@ public class Borrower {
     private String email;
 
     @ManyToOne
+    @JoinColumn(name = "book_id")
     private Book currentBook;           // null dacă nu are carte
 
     private LocalDateTime borrowedAt;   // null dacă nu are

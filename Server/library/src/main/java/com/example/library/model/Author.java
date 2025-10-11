@@ -1,5 +1,6 @@
 package com.example.library.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.util.*;
 
@@ -11,6 +12,7 @@ public class Author {
     @Column(nullable=false, length=100)
     private String name;
 
+    @JsonIgnore
     @OneToMany(mappedBy="author", cascade=CascadeType.ALL, orphanRemoval=true)
     private List<Book> books = new ArrayList<>();
 

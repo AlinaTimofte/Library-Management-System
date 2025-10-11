@@ -9,4 +9,6 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     List<Book> findMostBorrowed(Pageable pageable);
 
     List<Book> findByTitleContainingIgnoreCase(String keyword); // pentru filtrare rapidă
+
+    List<Book> findTop5ByOrderByTotalBorrowsDesc();
 }

@@ -11,6 +11,7 @@ public class Book {
     private String title;
 
     @ManyToOne(optional=false)
+    @JoinColumn(name = "author_id")
     private Author author;
 
     private boolean available = true;
