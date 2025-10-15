@@ -1,7 +1,10 @@
 package com.example.library.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Borrower {
@@ -14,24 +17,32 @@ public class Borrower {
     @Column(nullable=false, length=150)
     private String email;
 
-    @ManyToOne
-    @JoinColumn(name = "book_id")
-    private Book currentBook;           // null dacă nu are carte
+    @Column(nullable = false)
+    private boolean notified = false;
 
-    private LocalDateTime borrowedAt;   // null dacă nu are
-    private LocalDateTime dueAt;        // null dacă nu are
+    @Column(nullable = false)
+    private int totalBorrows = 0;
+
+    @OneToMany(mappedBy = "borrower", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @JsonManagedReference
+    private List<Loan> loans = new ArrayList<>();
 
     // getters/setters
+    public int getTotalBorrows() {return totalBorrows;}
+    public void setTotalBorrows(int totalBorrows) {this.totalBorrows = totalBorrows;}
+    public boolean isNotified() {return notified;}
+    public void setNotified(boolean notified) {this.notified = notified;}
     public Long getId(){return id;}
     public void setId(Long id){this.id=id;}
     public String getName(){return name;}
     public void setName(String name){this.name=name;}
     public String getEmail(){return email;}
     public void setEmail(String email){this.email=email;}
-    public Book getCurrentBook(){return currentBook;}
-    public void setCurrentBook(Book currentBook){this.currentBook=currentBook;}
-    public LocalDateTime getBorrowedAt(){return borrowedAt;}
-    public void setBorrowedAt(LocalDateTime borrowedAt){this.borrowedAt=borrowedAt;}
-    public LocalDateTime getDueAt(){return dueAt;}
-    public void setDueAt(LocalDateTime dueAt){this.dueAt=dueAt;}
+    public List<Loan> getLoans() {
+        return loans;
+    }
+
+    public void setLoans(List<Loan> loans) {
+        this.loans = loans;
+    }
 }

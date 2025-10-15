@@ -1,18 +1,19 @@
-import { createRouter, createWebHistory } from "vue-router";
-import BooksView from "../views/BooksView.vue";
-import AuthorsView from "../views/AuthorsView.vue";
-import BorrowersView from "../views/BorrowersView.vue";
-import StatsView from "../views/StatsView.vue";
+import { createRouter, createWebHistory } from 'vue-router';
+import Dashboard from '../components/Dashboard.vue';
+import BooksView from '../views/BooksView.vue';
+import AuthorsView from '../views/AuthorsView.vue';
+import BorrowersView from '../views/BorrowersView.vue';
+
+const routes = [
+  { path: '/', component: Dashboard },
+  { path: '/books', component: BooksView },
+  { path: '/authors', component: AuthorsView },
+  { path: '/borrowers', component: BorrowersView },
+];
 
 const router = createRouter({
   history: createWebHistory(),
-  routes: [
-    { path: "/", redirect: "/books" },
-    { path: "/books", component: BooksView },
-    { path: "/authors", component: AuthorsView },
-    { path: "/borrowers", component: BorrowersView },
-    { path: "/stats", component: StatsView },
-  ],
+  routes
 });
 
 export default router;

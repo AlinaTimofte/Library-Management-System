@@ -11,33 +11,47 @@ import java.time.LocalDateTime;
 public class LoanService {
     private final BookRepository bookRepo;
     private final BorrowerRepository borrowerRepo;
+    private final LoanRepository loanRepo;
 
-    public LoanService(BookRepository bookRepo, BorrowerRepository borrowerRepo) {
-        this.bookRepo = bookRepo; this.borrowerRepo = borrowerRepo;
+    public LoanService(BookRepository bookRepo, BorrowerRepository borrowerRepo, LoanRepository loanRepo) {
+        this.bookRepo = bookRepo;
+        this.borrowerRepo = borrowerRepo;
+        this.loanRepo = loanRepo;
     }
 
-    public Borrower assignBookToBorrower(Long bookId, Long borrowerId, int days) {
-        Book b = bookRepo.findById(bookId).orElseThrow();
-        if (!b.isAvailable()) throw new IllegalStateException("Cartea nu e disponibilă.");
-        Borrower br = borrowerRepo.findById(borrowerId).orElseThrow();
+    public Loan assignBookToBorrower(Long bookId, Long borrowerId, int days) {
+        Book book = bookRepo.findById(bookId).orElseThrow(() -> new IllegalStateException("Book not found"));
+        if (book.getAvailableCopies() <= 0) {
+            throw new IllegalStateException("Cartea nu e disponibilă.");
+        }
+        Borrower borrower = borrowerRepo.findById(borrowerId).orElseThrow(() -> new IllegalStateException("Borrower not found"));
 
-        b.setAvailable(false);
-        b.setTotalBorrows(b.getTotalBorrows() + 1);
+        book.setAvailableCopies(book.getAvailableCopies() - 1);
+        book.setTotalBorrows(book.getTotalBorrows() + 1);
 
-        br.setCurrentBook(b);
-        br.setBorrowedAt(LocalDateTime.now());
-        br.setDueAt(LocalDateTime.now().plusDays(days));
-        return br; // @Transactional -> salvează
+        Loan loan = new Loan();
+        loan.setBook(book);
+        loan.setBorrower(borrower);
+        loan.setBorrowedAt(LocalDateTime.now());
+        loan.setDueAt(LocalDateTime.now().plusDays(days));
+
+        borrower.getLoans().add(loan);
+        borrower.setTotalBorrows(borrower.getTotalBorrows() + 1);
+
+        return loanRepo.save(loan);
     }
 
-    public Borrower returnBook(Long borrowerId) {
-        Borrower br = borrowerRepo.findById(borrowerId).orElseThrow();
-        if (br.getCurrentBook() == null) return br;
-        Book b = br.getCurrentBook();
-        b.setAvailable(true);
-        br.setCurrentBook(null);
-        br.setBorrowedAt(null);
-        br.setDueAt(null);
-        return br;
+    public Loan returnBook(Long loanId) {
+        Loan loan = loanRepo.findById(loanId).orElseThrow(() -> new IllegalStateException("Loan not found"));
+        if (loan.getReturnedAt() != null) {
+            throw new IllegalStateException("Book already returned");
+        }
+
+        loan.setReturnedAt(LocalDateTime.now());
+
+        Book book = loan.getBook();
+        book.setAvailableCopies(book.getAvailableCopies() + 1);
+
+        return loanRepo.save(loan);
     }
 }

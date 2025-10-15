@@ -1,0 +1,186 @@
+<template>
+  <div class="container mt-4">
+    <h1 class="mb-4">Books</h1>
+
+    <!-- Add Book Form -->
+    <div class="card mb-4">
+      <div class="card-body">
+        <h5 class="card-title">Add New Book</h5>
+        <form @submit.prevent="addBook">
+          <div class="row">
+            <div class="col-md-5 mb-3">
+              <input v-model="newBook.title" type="text" class="form-control" placeholder="Book Title" required>
+            </div>
+            <div class="col-md-3 mb-3">
+              <select v-model="newBook.authorId" class="form-select" required>
+                <option disabled value="">Select Author</option>
+                <option v-for="author in authors" :key="author.id" :value="author.id">{{ author.name }}</option>
+              </select>
+            </div>
+            <div class="col-md-2 mb-3">
+              <input v-model.number="newBook.totalCopies" type="number" class="form-control" placeholder="Copies" min="1" required>
+            </div>
+            <div class="col-md-2 mb-3">
+              <button type="submit" class="btn btn-primary w-100">Add Book</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Search and Book List -->
+    <div class="card">
+      <div class="card-header">Book List</div>
+      <div class="card-body">
+        <input v-model="searchTerm" @input="searchBooks" class="form-control mb-3" placeholder="Search for a book...">
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Available</th>
+              <th>Available Copies</th>
+              <th>Total Copies</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="book in books" :key="book.id">
+              <td>{{ book.id }}</td>
+              <td>
+                <input v-if="editingId === book.id" v-model="editTitle" class="form-control">
+                <span v-else>{{ book.title }}</span>
+              </td>
+              <td>{{ book.author.name }}</td>
+              <td>
+                <span :class="book.availableCopies > 0 ? 'text-success' : 'text-danger'">
+                  {{ book.availableCopies > 0 ? 'Yes' : 'No' }}
+                </span>
+              </td>
+              <td>{{ book.availableCopies }}</td>
+              <td>{{ book.totalCopies }}</td>
+              <td>
+                <div v-if="editingId === book.id">
+                  <button @click="saveEdit(book.id)" class="btn btn-success btn-sm me-2">Save</button>
+                  <button @click="cancelEdit" class="btn btn-secondary btn-sm">Cancel</button>
+                </div>
+                <div v-else>
+                  <button @click="startEdit(book)" class="btn btn-warning btn-sm me-2">Edit</button>
+                  <button @click="deleteBook(book.id)" class="btn btn-danger btn-sm">Delete</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref, onMounted } from 'vue';
+import api from '../api/axios';
+
+const books = ref([]);
+const authors = ref([]);
+const searchTerm = ref('');
+const editingId = ref(null);
+const editTitle = ref('');
+const newBook = ref({
+  title: '',
+  authorId: '',
+  totalCopies: 1
+});
+
+const loadBooks = async () => {
+  try {
+    const response = await api.get('/books');
+    books.value = response.data;
+  } catch (error) {
+    console.error("Error loading books:", error);
+  }
+};
+
+const loadAuthors = async () => {
+  try {
+    const response = await api.get('/authors');
+    authors.value = response.data;
+  } catch (error) {
+    console.error("Error loading authors:", error);
+  }
+};
+
+const searchBooks = async () => {
+  try {
+    if (!searchTerm.value) {
+      loadBooks();
+      return;
+    }
+    const response = await api.get(`/books/search?q=${searchTerm.value}`);
+    books.value = response.data;
+  } catch (error) {
+    console.error("Error searching books:", error);
+  }
+};
+
+const addBook = async () => {
+  if (!newBook.value.title || !newBook.value.authorId) return;
+  try {
+    await api.post('/books', { 
+      title: newBook.value.title, 
+      author: { id: newBook.value.authorId },
+      totalCopies: newBook.value.totalCopies,
+      availableCopies: newBook.value.totalCopies
+    });
+    newBook.value.title = '';
+    newBook.value.authorId = '';
+    newBook.value.totalCopies = 1;
+    loadBooks();
+  } catch (error) {
+    console.error("Error adding book:", error);
+  }
+};
+
+const deleteBook = async (id) => {
+  if (confirm('Are you sure you want to delete this book?')) {
+    try {
+      await api.delete(`/books/${id}`);
+      loadBooks();
+    } catch (error) {
+      console.error("Error deleting book:", error);
+    }
+  }
+};
+
+const startEdit = (book) => {
+  editingId.value = book.id;
+  editTitle.value = book.title;
+};
+
+const cancelEdit = () => {
+  editingId.value = null;
+};
+
+const saveEdit = async (id) => {
+  try {
+    await api.put(`/books/${id}`, { title: editTitle.value });
+    editingId.value = null;
+    loadBooks();
+  } catch (error) {
+    console.error("Error saving book:", error);
+  }
+};
+
+onMounted(() => {
+  loadBooks();
+  loadAuthors();
+});
+</script>
+
+<style scoped>
+.container {
+  max-width: 1200px;
+}
+</style>

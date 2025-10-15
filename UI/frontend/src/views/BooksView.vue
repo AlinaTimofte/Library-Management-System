@@ -1,12 +1,12 @@
-<script setup>
-
-</script>
-
 <template>
   <div>
-    <h1>Books Page</h1>
+    <BookList />
   </div>
 </template>
+
+<script setup>
+import BookList from '../components/BookList.vue';
+</script>
 
 <style scoped>
 

@@ -1,6 +1,10 @@
 package com.example.library.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Book {
@@ -14,8 +18,13 @@ public class Book {
     @JoinColumn(name = "author_id")
     private Author author;
 
-    private boolean available = true;
     private int totalBorrows = 0;
+    private int totalCopies = 1;
+    private int availableCopies = 1;
+
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
+    private List<Loan> loans = new ArrayList<>();
 
     // getters/setters
     public Long getId(){return id;}
@@ -24,8 +33,11 @@ public class Book {
     public void setTitle(String title){this.title=title;}
     public Author getAuthor(){return author;}
     public void setAuthor(Author author){this.author=author;}
-    public boolean isAvailable(){return available;}
-    public void setAvailable(boolean available){this.available=available;}
+    public boolean isAvailable(){return this.availableCopies > 0;}
     public int getTotalBorrows(){return totalBorrows;}
     public void setTotalBorrows(int totalBorrows){this.totalBorrows=totalBorrows;}
+    public int getTotalCopies() {return totalCopies;}
+    public void setTotalCopies(int totalCopies) {this.totalCopies = totalCopies;}
+    public int getAvailableCopies() {return availableCopies;}
+    public void setAvailableCopies(int availableCopies) {this.availableCopies = availableCopies;}
 }
