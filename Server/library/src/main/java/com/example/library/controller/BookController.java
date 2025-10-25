@@ -35,12 +35,6 @@ public class BookController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) { repo.deleteById(id); }
 
-    // CUSTOM 1: top cele mai împrumutate
-    @GetMapping("/most-borrowed")
-    public List<Book> mostBorrowed(@RequestParam(defaultValue = "5") int top) {
-        return repo.findMostBorrowed(PageRequest.of(0, top));
-    }
-
     @GetMapping("/search")
     public List<Book> search(@RequestParam String q) {
         return repo.findByTitleContainingIgnoreCase(q);

@@ -10,10 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
+
 
 @RestController
 @RequestMapping("/api/borrowers")
@@ -69,32 +67,8 @@ public class BorrowerController {
     }
 
     @GetMapping("/overdue")
-    public List<Map<String, Object>> getOverdueBorrowers() {
-        List<Loan> overdueLoans = loanRepository.findByReturnedAtIsNullAndDueAtBefore(LocalDateTime.now());
-
-        // Mark borrowers as notified
-        overdueLoans.forEach(loan -> {
-            Borrower borrower = loan.getBorrower();
-            if (!borrower.isNotified()) {
-                borrower.setNotified(true);
-                borrowerRepository.save(borrower);
-            }
-        });
-
-        return overdueLoans.stream().map(loan -> {
-            Map<String, Object> map = new HashMap<>();
-            Borrower borrower = loan.getBorrower();
-            map.put("id", borrower.getId());
-            map.put("name", borrower.getName());
-            map.put("email", borrower.getEmail());
-            map.put("bookTitle", loan.getBook() != null ? loan.getBook().getTitle() : "N/A");
-            map.put("dueAt", loan.getDueAt());
-            map.put("daysLate", java.time.temporal.ChronoUnit.DAYS.between(loan.getDueAt(), LocalDateTime.now()));
-            map.put("message", "📬 Cartea \"" +
-                    (loan.getBook() != null ? loan.getBook().getTitle() : "necunoscută") + 
-                    "\" trebuia returnată pe " + loan.getDueAt() + ". Vă rugăm să o returnați cât mai curând.");
-            return map;
-        }).collect(Collectors.toList());
+    public List<Loan> getOverdueBorrowers() {
+        return loanRepository.findByReturnedAtIsNullAndDueAtBefore(LocalDateTime.now());
     }
 
 

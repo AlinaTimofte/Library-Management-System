@@ -23,7 +23,6 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>ID</th>
               <th>Name</th>
               <th>Email</th>
               <th>Actions</th>
@@ -31,7 +30,6 @@
           </thead>
           <tbody>
             <tr v-for="borrower in borrowers" :key="borrower.id">
-              <td>{{ borrower.id }}</td>
               <td>{{ borrower.name }}</td>
               <td>{{ borrower.email }}</td>
               <td>

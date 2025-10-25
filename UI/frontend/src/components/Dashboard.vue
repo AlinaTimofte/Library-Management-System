@@ -37,6 +37,25 @@
         </li>
       </ul>
     </div>
+
+    <div class="mt-5">
+      <h2>Top 5 Active Borrowers</h2>
+      <ul class="list-group">
+        <li v-for="borrower in topActiveBorrowers" :key="borrower.id" class="list-group-item d-flex justify-content-between align-items-center">
+          {{ borrower.name }}
+          <span class="badge bg-success rounded-pill">{{ borrower.totalBorrows }} borrows</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="mt-5">
+      <h2>Borrowers with Overdue Books</h2>
+      <ul class="list-group">
+        <li v-for="loan in overdueLoans" :key="loan.id" class="list-group-item d-flex justify-content-between align-items-center">
+          {{ loan.borrower.name }}
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -47,6 +66,8 @@ import api from '../api/axios';
 const books = ref([]);
 const borrowers = ref([]);
 const topBooks = ref([]);
+const overdueLoans = ref([]);
+const topActiveBorrowers = ref([]);
 
 const borrowedCount = computed(() => {
   return borrowers.value.filter(b => b.currentBook != null).length;
@@ -62,6 +83,12 @@ onMounted(async () => {
 
     const topBooksResponse = await api.get('/books/top-borrowed');
     topBooks.value = topBooksResponse.data;
+
+    const overdueLoansResponse = await api.get('/borrowers/overdue');
+    overdueLoans.value = overdueLoansResponse.data;
+
+    const topActiveBorrowersResponse = await api.get('/borrowers/top-active');
+    topActiveBorrowers.value = topActiveBorrowersResponse.data;
   } catch (error) {
     console.error('Error fetching dashboard data:', error);
   }

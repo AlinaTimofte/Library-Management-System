@@ -6,11 +6,9 @@ import org.springframework.data.jpa.repository.*;
 import java.util.*;
 
 public interface BookRepository extends JpaRepository<Book, Long> {
-    @Query("select b from Book b order by b.totalBorrows desc")
-    List<Book> findMostBorrowed(Pageable pageable);
-
     List<Book> findByTitleContainingIgnoreCase(String keyword); // pentru filtrare rapidă
 
+    @Query("SELECT b FROM Book b WHERE b.totalBorrows > 0 ORDER BY b.totalBorrows DESC")
     List<Book> findTop5ByOrderByTotalBorrowsDesc();
 
 }

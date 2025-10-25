@@ -28,6 +28,7 @@ public class LoanService {
 
         book.setAvailableCopies(book.getAvailableCopies() - 1);
         book.setTotalBorrows(book.getTotalBorrows() + 1);
+        bookRepo.save(book);
 
         Loan loan = new Loan();
         loan.setBook(book);

@@ -18,6 +18,9 @@
               <router-link class="nav-link" to="/authors">Authors</router-link>
             </li>
             <li class="nav-item">
+              <router-link class="nav-link" to="/genres">Genres</router-link>
+            </li>
+            <li class="nav-item">
               <router-link class="nav-link" to="/borrowers">Borrowers</router-link>
             </li>
           </ul>

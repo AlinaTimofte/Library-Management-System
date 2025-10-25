@@ -8,13 +8,19 @@
         <h5 class="card-title">Add New Book</h5>
         <form @submit.prevent="addBook">
           <div class="row">
-            <div class="col-md-5 mb-3">
+            <div class="col-md-4 mb-3">
               <input v-model="newBook.title" type="text" class="form-control" placeholder="Book Title" required>
             </div>
             <div class="col-md-3 mb-3">
               <select v-model="newBook.authorId" class="form-select" required>
                 <option disabled value="">Select Author</option>
                 <option v-for="author in authors" :key="author.id" :value="author.id">{{ author.name }}</option>
+              </select>
+            </div>
+            <div class="col-md-3 mb-3">
+              <select v-model="newBook.genreId" class="form-select" required>
+                <option disabled value="">Select Genre</option>
+                <option v-for="genre in genres" :key="genre.id" :value="genre.id">{{ genre.name }}</option>
               </select>
             </div>
             <div class="col-md-2 mb-3">
@@ -37,9 +43,9 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>ID</th>
               <th>Title</th>
               <th>Author</th>
+              <th>Genre</th>
               <th>Available</th>
               <th>Available Copies</th>
               <th>Total Copies</th>
@@ -48,12 +54,12 @@
           </thead>
           <tbody>
             <tr v-for="book in books" :key="book.id">
-              <td>{{ book.id }}</td>
               <td>
                 <input v-if="editingId === book.id" v-model="editTitle" class="form-control">
                 <span v-else>{{ book.title }}</span>
               </td>
               <td>{{ book.author.name }}</td>
+              <td>{{ book.genre.name }}</td>
               <td>
                 <span :class="book.availableCopies > 0 ? 'text-success' : 'text-danger'">
                   {{ book.availableCopies > 0 ? 'Yes' : 'No' }}
@@ -85,12 +91,14 @@ import api from '../api/axios';
 
 const books = ref([]);
 const authors = ref([]);
+const genres = ref([]);
 const searchTerm = ref('');
 const editingId = ref(null);
 const editTitle = ref('');
 const newBook = ref({
   title: '',
   authorId: '',
+  genreId: '',
   totalCopies: 1
 });
 
@@ -112,6 +120,15 @@ const loadAuthors = async () => {
   }
 };
 
+const loadGenres = async () => {
+  try {
+    const response = await api.get('/genres');
+    genres.value = response.data;
+  } catch (error) {
+    console.error("Error loading genres:", error);
+  }
+};
+
 const searchBooks = async () => {
   try {
     if (!searchTerm.value) {
@@ -126,16 +143,18 @@ const searchBooks = async () => {
 };
 
 const addBook = async () => {
-  if (!newBook.value.title || !newBook.value.authorId) return;
+  if (!newBook.value.title || !newBook.value.authorId || !newBook.value.genreId) return;
   try {
     await api.post('/books', { 
       title: newBook.value.title, 
       author: { id: newBook.value.authorId },
+      genre: { id: newBook.value.genreId },
       totalCopies: newBook.value.totalCopies,
       availableCopies: newBook.value.totalCopies
     });
     newBook.value.title = '';
     newBook.value.authorId = '';
+    newBook.value.genreId = '';
     newBook.value.totalCopies = 1;
     loadBooks();
   } catch (error) {
@@ -176,6 +195,7 @@ const saveEdit = async (id) => {
 onMounted(() => {
   loadBooks();
   loadAuthors();
+  loadGenres();
 });
 </script>
 
