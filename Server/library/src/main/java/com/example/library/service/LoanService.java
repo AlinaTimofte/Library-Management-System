@@ -38,6 +38,7 @@ public class LoanService {
 
         borrower.getLoans().add(loan);
         borrower.setTotalBorrows(borrower.getTotalBorrows() + 1);
+        borrowerRepo.save(borrower);
 
         return loanRepo.save(loan);
     }

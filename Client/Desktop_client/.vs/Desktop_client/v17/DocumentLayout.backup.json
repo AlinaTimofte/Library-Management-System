@@ -1,0 +1,52 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "\\\\Mac\\Home\\Documents\\facultate\\AN4\\semestrul1\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|\\\\Mac\\Home\\Documents\\facultate\\AN4\\semestrul1\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\desktop_client\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|\\\\Mac\\Home\\Documents\\facultate\\AN4\\semestrul1\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\desktop_client\\welcomeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RegisterForm.cs",
+              "DocumentMoniker": "\\\\Mac\\Home\\Documents\\facultate\\AN4\\semestrul1\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\RegisterForm.cs",
+              "RelativeDocumentMoniker": "Desktop_client\\RegisterForm.cs",
+              "ToolTip": "\\\\Mac\\Home\\Documents\\facultate\\AN4\\semestrul1\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\RegisterForm.cs",
+              "RelativeToolTip": "Desktop_client\\RegisterForm.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwC4AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-07T09:49:24.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WelcomeForm.cs",
+              "DocumentMoniker": "\\\\Mac\\Home\\Documents\\facultate\\AN4\\semestrul1\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\WelcomeForm.cs",
+              "RelativeDocumentMoniker": "Desktop_client\\WelcomeForm.cs",
+              "ToolTip": "\\\\Mac\\Home\\Documents\\facultate\\AN4\\semestrul1\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\WelcomeForm.cs*",
+              "RelativeToolTip": "Desktop_client\\WelcomeForm.cs*",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwDkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T14:22:42.456Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
