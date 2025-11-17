@@ -51,8 +51,8 @@
     <div class="mt-5">
       <h2>Borrowers with Overdue Books</h2>
       <ul class="list-group">
-        <li v-for="loan in overdueLoans" :key="loan.id" class="list-group-item d-flex justify-content-between align-items-center">
-          {{ loan.borrower.name }}
+        <li v-for="b in overdueBorrowers" :key="b.id" class="list-group-item d-flex justify-content-between align-items-center">
+          {{ b.name }} <span class="badge bg-danger rounded-pill">overdue</span>
         </li>
       </ul>
     </div>
@@ -66,7 +66,7 @@ import api from '../api/axios';
 const books = ref([]);
 const borrowers = ref([]);
 const topBooks = ref([]);
-const overdueLoans = ref([]);
+const overdueBorrowers = ref([]);
 const topActiveBorrowers = ref([]);
 
 const borrowedCount = computed(() => {
@@ -84,8 +84,8 @@ onMounted(async () => {
     const topBooksResponse = await api.get('/books/top-borrowed');
     topBooks.value = topBooksResponse.data;
 
-    const overdueLoansResponse = await api.get('/borrowers/overdue');
-    overdueLoans.value = overdueLoansResponse.data;
+    const overdueBorrowersResponse = await api.get('/borrowers/overdue-borrowers');
+    overdueBorrowers.value = overdueBorrowersResponse.data;
 
     const topActiveBorrowersResponse = await api.get('/borrowers/top-active');
     topActiveBorrowers.value = topActiveBorrowersResponse.data;

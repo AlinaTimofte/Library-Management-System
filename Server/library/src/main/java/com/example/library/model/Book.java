@@ -27,6 +27,9 @@ public class Book {
     private int totalCopies = 1;
     private int availableCopies = 1;
 
+    @Column(length = 1000)
+    private String description;
+
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
     private List<Loan> loans = new ArrayList<>();
@@ -90,5 +93,13 @@ public class Book {
 
     public void setAvailableCopies(int availableCopies) {
         this.availableCopies = availableCopies;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

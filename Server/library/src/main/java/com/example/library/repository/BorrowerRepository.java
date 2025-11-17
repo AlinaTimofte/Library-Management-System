@@ -8,9 +8,15 @@ import java.util.*;
 public interface BorrowerRepository extends JpaRepository<Borrower, Long> {
     List<Borrower> findTop5ByOrderByTotalBorrowsDesc();
 
+    @Query(value = "SELECT * FROM borrower ORDER BY total_borrows DESC LIMIT 5", nativeQuery = true)
+    List<Borrower> findTop5ActiveBorrowersNative();
+
+    @Query("SELECT DISTINCT l.borrower FROM Loan l WHERE l.returnedAt IS NULL AND l.dueAt < CURRENT_TIMESTAMP")
+    List<Borrower> findBorrowersWithOverdueLoans();
+
     Optional<Borrower> findByEmail(String email);
 
     @Modifying
-    @Query(value = "DELETE FROM borrow_history WHERE borrower_id = :borrowerId", nativeQuery = true)
-    void deleteBorrowHistoryByBorrowerId(@Param("borrowerId") Long borrowerId);
+    @Query("DELETE FROM Loan l WHERE l.borrower.id = :borrowerId")
+    void deleteAssociatedLoans(@Param("borrowerId") Long borrowerId);
 }

@@ -44,4 +44,19 @@ public class BookController {
     public List<Book> getTopBorrowedBooks() {
         return repo.findTop5ByOrderByTotalBorrowsDesc();
     }
+
+    @GetMapping("/by-author/{authorId}")
+    public List<Book> getBooksByAuthor(@PathVariable Long authorId) {
+        return repo.findByAuthorId(authorId);
+    }
+
+    @PostMapping("/{id}/reserve")
+    public Book reserveBook(@PathVariable Long id) {
+        Book book = repo.findById(id).orElseThrow();
+        if (book.getAvailableCopies() > 0) {
+            book.setAvailableCopies(book.getAvailableCopies() - 1);
+            return repo.save(book);
+        }
+        throw new IllegalStateException("Book is not available");
+    }
 }

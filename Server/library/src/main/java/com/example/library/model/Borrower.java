@@ -1,6 +1,7 @@
 package com.example.library.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -16,6 +17,10 @@ public class Borrower {
 
     @Column(nullable=false, length=150)
     private String email;
+
+    @Column(nullable = false, length = 60)
+    @JsonIgnore
+    private String passwordHash;
 
     @Column(nullable = false)
     private boolean notified = false;
@@ -38,6 +43,8 @@ public class Borrower {
     public void setName(String name){this.name=name;}
     public String getEmail(){return email;}
     public void setEmail(String email){this.email=email;}
+    public String getPasswordHash(){return passwordHash;}
+    public void setPasswordHash(String passwordHash){this.passwordHash=passwordHash;}
     public List<Loan> getLoans() {
         return loans;
     }

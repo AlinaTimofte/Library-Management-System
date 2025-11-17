@@ -26,6 +26,9 @@
             <div class="col-md-2 mb-3">
               <input v-model.number="newBook.totalCopies" type="number" class="form-control" placeholder="Copies" min="1" required>
             </div>
+            <div class="col-md-4 mb-3">
+              <textarea v-model="newBook.description" class="form-control" placeholder="Description (optional)" rows="2"></textarea>
+            </div>
             <div class="col-md-2 mb-3">
               <button type="submit" class="btn btn-primary w-100">Add Book</button>
             </div>
@@ -46,6 +49,7 @@
               <th>Title</th>
               <th>Author</th>
               <th>Genre</th>
+              <th>Description</th>
               <th>Available</th>
               <th>Available Copies</th>
               <th>Total Copies</th>
@@ -60,6 +64,10 @@
               </td>
               <td>{{ book.author.name }}</td>
               <td>{{ book.genre.name }}</td>
+              <td>
+                <textarea v-if="editingId === book.id" v-model="editDescription" class="form-control" rows="2"></textarea>
+                <span v-else>{{ book.description || 'No description' }}</span>
+              </td>
               <td>
                 <span :class="book.availableCopies > 0 ? 'text-success' : 'text-danger'">
                   {{ book.availableCopies > 0 ? 'Yes' : 'No' }}
@@ -95,11 +103,13 @@ const genres = ref([]);
 const searchTerm = ref('');
 const editingId = ref(null);
 const editTitle = ref('');
+const editDescription = ref('');
 const newBook = ref({
   title: '',
   authorId: '',
   genreId: '',
-  totalCopies: 1
+  totalCopies: 1,
+  description: ''
 });
 
 const loadBooks = async () => {
@@ -150,12 +160,14 @@ const addBook = async () => {
       author: { id: newBook.value.authorId },
       genre: { id: newBook.value.genreId },
       totalCopies: newBook.value.totalCopies,
-      availableCopies: newBook.value.totalCopies
+      availableCopies: newBook.value.totalCopies,
+      description: newBook.value.description || null
     });
     newBook.value.title = '';
     newBook.value.authorId = '';
     newBook.value.genreId = '';
     newBook.value.totalCopies = 1;
+    newBook.value.description = '';
     loadBooks();
   } catch (error) {
     console.error("Error adding book:", error);
@@ -176,6 +188,7 @@ const deleteBook = async (id) => {
 const startEdit = (book) => {
   editingId.value = book.id;
   editTitle.value = book.title;
+  editDescription.value = book.description || '';
 };
 
 const cancelEdit = () => {
@@ -184,7 +197,15 @@ const cancelEdit = () => {
 
 const saveEdit = async (id) => {
   try {
-    await api.put(`/books/${id}`, { title: editTitle.value });
+    const book = books.value.find(b => b.id === id);
+    await api.put(`/books/${id}`, { 
+      title: editTitle.value,
+      description: editDescription.value || null,
+      author: book.author,
+      genre: book.genre,
+      totalCopies: book.totalCopies,
+      availableCopies: book.availableCopies
+    });
     editingId.value = null;
     loadBooks();
   } catch (error) {
