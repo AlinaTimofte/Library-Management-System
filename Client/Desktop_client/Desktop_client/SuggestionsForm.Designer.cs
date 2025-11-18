@@ -196,6 +196,7 @@
             this.ExitAppButton.TabIndex = 24;
             this.ExitAppButton.Text = "Exit";
             this.ExitAppButton.UseVisualStyleBackColor = false;
+            this.ExitAppButton.Click += new System.EventHandler(this.ExitAppButton_Click);
             // 
             // GoToProfileButton
             // 
@@ -210,6 +211,7 @@
             this.GoToProfileButton.TabIndex = 25;
             this.GoToProfileButton.Text = "Profile";
             this.GoToProfileButton.UseVisualStyleBackColor = false;
+            this.GoToProfileButton.Click += new System.EventHandler(this.GoToProfileButton_Click);
             // 
             // SuggestionsForm
             // 

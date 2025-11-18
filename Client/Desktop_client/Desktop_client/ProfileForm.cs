@@ -19,6 +19,7 @@ namespace Desktop_client
         private List<Author> authors;
         private List<Book> books;
         private List<Loan> userLoans;
+        private bool isReserveInProgress;
 
         public ProfileForm()
         {
@@ -33,6 +34,8 @@ namespace Desktop_client
             LoadData();
         }
 
+        private const int DefaultLoanDays = 7;
+
         private async void LoadData()
         {
             try
@@ -45,16 +48,7 @@ namespace Desktop_client
                     AuthorComboBox.Items.Add(author.Name);
                 }
 
-                // Load user's loans
-                userLoans = await apiService.GetBorrowerLoansAsync(borrower.Id);
-                UserCollectionComboBox.Items.Clear();
-                foreach (var loan in userLoans)
-                {
-                    if (loan.Book != null)
-                    {
-                        UserCollectionComboBox.Items.Add(loan.Book.Title);
-                    }
-                }
+                await RefreshUserLoansAsync();
             }
             catch (Exception ex)
             {
@@ -120,18 +114,7 @@ namespace Desktop_client
                 await apiService.ReturnBookAsync(selectedLoan.Id);
                 MessageBox.Show("You have 3 days to bring the book back to the library.", "Return Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Refresh the user's loans
-                userLoans = await apiService.GetBorrowerLoansAsync(borrower.Id);
-                UserCollectionComboBox.Items.Clear();
-                foreach (var loan in userLoans)
-                {
-                    if (loan.Book != null)
-                    {
-                        UserCollectionComboBox.Items.Add(loan.Book.Title);
-                    }
-                }
-
-                DueAtTextBox.Clear();
+                await RefreshUserLoansAsync();
             }
             catch (Exception ex)
             {
@@ -141,9 +124,20 @@ namespace Desktop_client
 
         private async void ReserveButton_Click(object sender, EventArgs e)
         {
+            if (isReserveInProgress)
+            {
+                return;
+            }
+
             if (BooksComboBox.SelectedIndex < 0)
             {
                 MessageBox.Show("Please select a book to reserve.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (borrower == null)
+            {
+                MessageBox.Show("Borrower information is missing. Please log in again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -151,13 +145,79 @@ namespace Desktop_client
 
             try
             {
-                await apiService.ReserveBookAsync(selectedBook.Id);
-                MessageBox.Show("The book can be picked up today!", "Reservation Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                isReserveInProgress = true;
+                ReserveButton.Enabled = false;
+
+                var loan = await apiService.BorrowBookAsync(selectedBook.Id, borrower.Id, DefaultLoanDays);
+                if (loan == null)
+                {
+                    MessageBox.Show("Unable to reserve the book at the moment. Please try again.", "Reservation Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                var dueDateText = loan.DueAt.ToString("yyyy-MM-dd");
+                MessageBox.Show($"The book has been added to your loans.\nDue date: {dueDateText}.", "Reservation Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                await RefreshUserLoansAsync();
+
+                if (loan.Book != null)
+                {
+                    int newLoanIndex = userLoans.FindIndex(l => l.Id == loan.Id);
+                    if (newLoanIndex >= 0)
+                    {
+                        UserCollectionComboBox.SelectedIndex = newLoanIndex;
+                        DueAtTextBox.Text = loan.DueAt.ToString("yyyy-MM-dd");
+                    }
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error reserving book: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            finally
+            {
+                isReserveInProgress = false;
+                ReserveButton.Enabled = true;
+            }
+        }
+
+        private async void RefreshButton_Click(object sender, EventArgs e)
+        {
+            if (borrower == null)
+            {
+                MessageBox.Show("Borrower information is missing. Please log in again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                await RefreshUserLoansAsync();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error refreshing loans: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async Task RefreshUserLoansAsync()
+        {
+            if (borrower == null)
+            {
+                return;
+            }
+
+            userLoans = await apiService.GetBorrowerLoansAsync(borrower.Id);
+            UserCollectionComboBox.Items.Clear();
+
+            foreach (var loan in userLoans)
+            {
+                if (loan.Book != null)
+                {
+                    UserCollectionComboBox.Items.Add(loan.Book.Title);
+                }
+            }
+
+            DueAtTextBox.Clear();
         }
 
         private void ExitAppButton_Click(object sender, EventArgs e)

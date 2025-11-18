@@ -13,6 +13,5 @@ public interface LoanRepository extends JpaRepository<Loan, Long> {
 
     List<Loan> findByReturnedAtIsNullAndDueAtBefore(LocalDateTime dateTime);
 
-    @Modifying
-    void deleteByBorrowerId(Long borrowerId);
+    boolean existsByBorrowerIdAndBookIdAndReturnedAtIsNull(Long borrowerId, Long bookId);
 }

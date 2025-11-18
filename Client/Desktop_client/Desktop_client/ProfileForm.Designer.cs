@@ -43,6 +43,7 @@
             this.ReturnButton = new System.Windows.Forms.Button();
             this.SuggestionsButton = new System.Windows.Forms.Button();
             this.ExitAppButton = new System.Windows.Forms.Button();
+            this.RefreshButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -54,10 +55,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Palatino Linotype", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(16, 534);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(32, 1027);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(864, 44);
+            this.label1.Size = new System.Drawing.Size(1726, 87);
             this.label1.TabIndex = 2;
             this.label1.Text = "This is your profile page, where you can see our collection";
             // 
@@ -70,10 +71,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Palatino Linotype", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(322, 579);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(644, 1113);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(503, 44);
+            this.label2.Size = new System.Drawing.Size(1000, 87);
             this.label2.TabIndex = 3;
             this.label2.Text = "and reserve your book to pick up";
             // 
@@ -82,10 +83,10 @@
             this.AuthorComboBox.BackColor = System.Drawing.Color.Linen;
             this.AuthorComboBox.Font = new System.Drawing.Font("Palatino Linotype", 13.875F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AuthorComboBox.FormattingEnabled = true;
-            this.AuthorComboBox.Location = new System.Drawing.Point(950, 62);
-            this.AuthorComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AuthorComboBox.Location = new System.Drawing.Point(1900, 119);
+            this.AuthorComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AuthorComboBox.Name = "AuthorComboBox";
-            this.AuthorComboBox.Size = new System.Drawing.Size(240, 33);
+            this.AuthorComboBox.Size = new System.Drawing.Size(476, 57);
             this.AuthorComboBox.TabIndex = 4;
             this.AuthorComboBox.SelectedIndexChanged += new System.EventHandler(this.AuthorComboBox_SelectedIndexChanged);
             // 
@@ -98,10 +99,10 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Palatino Linotype", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(961, 16);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(1922, 31);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(230, 37);
+            this.label3.Size = new System.Drawing.Size(438, 72);
             this.label3.TabIndex = 5;
             this.label3.Text = "Select the author";
             // 
@@ -114,10 +115,10 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Palatino Linotype", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label4.Location = new System.Drawing.Point(619, 16);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(1238, 31);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(179, 37);
+            this.label4.Size = new System.Drawing.Size(344, 72);
             this.label4.TabIndex = 6;
             this.label4.Text = "List of books";
             // 
@@ -126,10 +127,10 @@
             this.BooksComboBox.BackColor = System.Drawing.Color.Linen;
             this.BooksComboBox.Font = new System.Drawing.Font("Palatino Linotype", 13.875F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BooksComboBox.FormattingEnabled = true;
-            this.BooksComboBox.Location = new System.Drawing.Point(584, 62);
-            this.BooksComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BooksComboBox.Location = new System.Drawing.Point(1168, 119);
+            this.BooksComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BooksComboBox.Name = "BooksComboBox";
-            this.BooksComboBox.Size = new System.Drawing.Size(240, 33);
+            this.BooksComboBox.Size = new System.Drawing.Size(476, 57);
             this.BooksComboBox.TabIndex = 7;
             this.BooksComboBox.SelectedIndexChanged += new System.EventHandler(this.BooksComboBox_SelectedIndexChanged);
             // 
@@ -137,13 +138,13 @@
             // 
             this.DescriptionTextBox.BackColor = System.Drawing.Color.Linen;
             this.DescriptionTextBox.Font = new System.Drawing.Font("Palatino Linotype", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DescriptionTextBox.Location = new System.Drawing.Point(662, 248);
-            this.DescriptionTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DescriptionTextBox.Location = new System.Drawing.Point(1324, 477);
+            this.DescriptionTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DescriptionTextBox.Multiline = true;
             this.DescriptionTextBox.Name = "DescriptionTextBox";
             this.DescriptionTextBox.ReadOnly = true;
             this.DescriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.DescriptionTextBox.Size = new System.Drawing.Size(456, 231);
+            this.DescriptionTextBox.Size = new System.Drawing.Size(908, 441);
             this.DescriptionTextBox.TabIndex = 8;
             // 
             // ReserveButton
@@ -152,10 +153,10 @@
             this.ReserveButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ReserveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ReserveButton.Font = new System.Drawing.Font("Palatino Linotype", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReserveButton.Location = new System.Drawing.Point(1145, 427);
-            this.ReserveButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ReserveButton.Location = new System.Drawing.Point(2290, 821);
+            this.ReserveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ReserveButton.Name = "ReserveButton";
-            this.ReserveButton.Size = new System.Drawing.Size(98, 50);
+            this.ReserveButton.Size = new System.Drawing.Size(196, 96);
             this.ReserveButton.TabIndex = 9;
             this.ReserveButton.Text = "Reserve";
             this.ReserveButton.UseVisualStyleBackColor = false;
@@ -166,10 +167,10 @@
             this.UserCollectionComboBox.BackColor = System.Drawing.Color.Linen;
             this.UserCollectionComboBox.Font = new System.Drawing.Font("Palatino Linotype", 13.875F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserCollectionComboBox.FormattingEnabled = true;
-            this.UserCollectionComboBox.Location = new System.Drawing.Point(46, 62);
-            this.UserCollectionComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UserCollectionComboBox.Location = new System.Drawing.Point(92, 119);
+            this.UserCollectionComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserCollectionComboBox.Name = "UserCollectionComboBox";
-            this.UserCollectionComboBox.Size = new System.Drawing.Size(240, 33);
+            this.UserCollectionComboBox.Size = new System.Drawing.Size(476, 57);
             this.UserCollectionComboBox.TabIndex = 11;
             this.UserCollectionComboBox.SelectedIndexChanged += new System.EventHandler(this.UserCollectionComboBox_SelectedIndexChanged);
             // 
@@ -182,10 +183,10 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Palatino Linotype", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Location = new System.Drawing.Point(58, 16);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(116, 31);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(221, 37);
+            this.label5.Size = new System.Drawing.Size(425, 72);
             this.label5.TabIndex = 12;
             this.label5.Text = "My list of books";
             // 
@@ -193,10 +194,10 @@
             // 
             this.DueAtTextBox.BackColor = System.Drawing.Color.Linen;
             this.DueAtTextBox.Font = new System.Drawing.Font("Palatino Linotype", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DueAtTextBox.Location = new System.Drawing.Point(46, 321);
-            this.DueAtTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DueAtTextBox.Location = new System.Drawing.Point(92, 617);
+            this.DueAtTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DueAtTextBox.Name = "DueAtTextBox";
-            this.DueAtTextBox.Size = new System.Drawing.Size(236, 32);
+            this.DueAtTextBox.Size = new System.Drawing.Size(468, 57);
             this.DueAtTextBox.TabIndex = 13;
             // 
             // label6
@@ -208,10 +209,10 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Palatino Linotype", 19.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label6.Location = new System.Drawing.Point(54, 277);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(108, 533);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 37);
+            this.label6.Size = new System.Drawing.Size(191, 72);
             this.label6.TabIndex = 14;
             this.label6.Text = "Due at";
             // 
@@ -221,10 +222,10 @@
             this.ReturnButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ReturnButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ReturnButton.Font = new System.Drawing.Font("Palatino Linotype", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReturnButton.Location = new System.Drawing.Point(330, 312);
-            this.ReturnButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ReturnButton.Location = new System.Drawing.Point(660, 600);
+            this.ReturnButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ReturnButton.Name = "ReturnButton";
-            this.ReturnButton.Size = new System.Drawing.Size(98, 50);
+            this.ReturnButton.Size = new System.Drawing.Size(196, 96);
             this.ReturnButton.TabIndex = 15;
             this.ReturnButton.Text = "Return";
             this.ReturnButton.UseVisualStyleBackColor = false;
@@ -236,10 +237,10 @@
             this.SuggestionsButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SuggestionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SuggestionsButton.Font = new System.Drawing.Font("Palatino Linotype", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SuggestionsButton.Location = new System.Drawing.Point(1099, 583);
-            this.SuggestionsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SuggestionsButton.Location = new System.Drawing.Point(2198, 1121);
+            this.SuggestionsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SuggestionsButton.Name = "SuggestionsButton";
-            this.SuggestionsButton.Size = new System.Drawing.Size(98, 50);
+            this.SuggestionsButton.Size = new System.Drawing.Size(196, 96);
             this.SuggestionsButton.TabIndex = 16;
             this.SuggestionsButton.Text = "Suggestions";
             this.SuggestionsButton.UseVisualStyleBackColor = false;
@@ -251,22 +252,38 @@
             this.ExitAppButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ExitAppButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExitAppButton.Font = new System.Drawing.Font("Palatino Linotype", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitAppButton.Location = new System.Drawing.Point(945, 583);
-            this.ExitAppButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ExitAppButton.Location = new System.Drawing.Point(1890, 1121);
+            this.ExitAppButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ExitAppButton.Name = "ExitAppButton";
-            this.ExitAppButton.Size = new System.Drawing.Size(98, 50);
+            this.ExitAppButton.Size = new System.Drawing.Size(196, 96);
             this.ExitAppButton.TabIndex = 17;
             this.ExitAppButton.Text = "Exit";
             this.ExitAppButton.UseVisualStyleBackColor = false;
             this.ExitAppButton.Click += new System.EventHandler(this.ExitAppButton_Click);
             // 
+            // RefreshButton
+            // 
+            this.RefreshButton.BackColor = System.Drawing.Color.RosyBrown;
+            this.RefreshButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RefreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RefreshButton.Font = new System.Drawing.Font("Palatino Linotype", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RefreshButton.Location = new System.Drawing.Point(671, 102);
+            this.RefreshButton.Margin = new System.Windows.Forms.Padding(4);
+            this.RefreshButton.Name = "RefreshButton";
+            this.RefreshButton.Size = new System.Drawing.Size(196, 96);
+            this.RefreshButton.TabIndex = 18;
+            this.RefreshButton.Text = "Refresh";
+            this.RefreshButton.UseVisualStyleBackColor = false;
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
+            // 
             // ProfileForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Desktop_client.Properties.Resources.profile_page;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1299, 641);
+            this.ClientSize = new System.Drawing.Size(2546, 1297);
+            this.Controls.Add(this.RefreshButton);
             this.Controls.Add(this.ExitAppButton);
             this.Controls.Add(this.SuggestionsButton);
             this.Controls.Add(this.ReturnButton);
@@ -282,8 +299,9 @@
             this.Controls.Add(this.AuthorComboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ProfileForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProfileForm";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -307,5 +325,6 @@
         private System.Windows.Forms.Button ReturnButton;
         private System.Windows.Forms.Button SuggestionsButton;
         private System.Windows.Forms.Button ExitAppButton;
+        private System.Windows.Forms.Button RefreshButton;
     }
 }

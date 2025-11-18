@@ -16,5 +16,16 @@ namespace Desktop_client
         {
             InitializeComponent();
         }
+
+        private void ExitAppButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void GoToProfileButton_Click(object sender, EventArgs e)
+        {
+            var profileForm = new ProfileForm();
+            profileForm.Show();
+        }
     }
 }
