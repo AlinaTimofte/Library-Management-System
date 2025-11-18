@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
@@ -24,30 +23,3 @@ Global
 		SolutionGuid = {5704C0F6-E609-4389-8A90-EC0769173023}
 	EndGlobalSection
 EndGlobal
-=======
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.13.35919.96 d17.13
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desktop_client", "Desktop_client\Desktop_client.csproj", "{B1624D81-7294-4797-96ED-9743118E7E53}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B1624D81-7294-4797-96ED-9743118E7E53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B1624D81-7294-4797-96ED-9743118E7E53}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B1624D81-7294-4797-96ED-9743118E7E53}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B1624D81-7294-4797-96ED-9743118E7E53}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {5704C0F6-E609-4389-8A90-EC0769173023}
-	EndGlobalSection
-EndGlobal
->>>>>>> 7e8896f6eaeb727f99ba64333cdd65172b716097

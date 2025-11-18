@@ -1,8 +1,5 @@
 using System;
-<<<<<<< HEAD
 using System.Collections.Generic;
-=======
->>>>>>> 7e8896f6eaeb727f99ba64333cdd65172b716097
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -80,7 +77,6 @@ namespace Desktop_client.Services
             string body = await response.Content.ReadAsStringAsync();
             return JsonSerializer.Deserialize<Loan>(body, jsonOptions);
         }
-<<<<<<< HEAD
 
         // Get all authors: GET /api/authors
         public async Task<List<Author>> GetAuthorsAsync()
@@ -133,9 +129,3 @@ namespace Desktop_client.Services
         }
     }
 }
-=======
-    }
-}
-
-
->>>>>>> 7e8896f6eaeb727f99ba64333cdd65172b716097

@@ -61,11 +61,7 @@ public class BorrowerController {
                 });
     }
 
-<<<<<<< HEAD
     // Password registration and login
-=======
-    // --- Password-based registration & login ---
->>>>>>> 7e8896f6eaeb727f99ba64333cdd65172b716097
     public static class RegisterRequest {
         public String name;
         public String email;

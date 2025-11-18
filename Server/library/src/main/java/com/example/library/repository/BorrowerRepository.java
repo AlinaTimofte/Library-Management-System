@@ -12,12 +12,6 @@ public interface BorrowerRepository extends JpaRepository<Borrower, Long> {
     @Query("SELECT DISTINCT l.borrower FROM Loan l WHERE l.returnedAt IS NULL AND l.dueAt < CURRENT_TIMESTAMP")
     List<Borrower> findBorrowersWithOverdueLoans();
 
-    @Query(value = "SELECT * FROM borrower ORDER BY total_borrows DESC LIMIT 5", nativeQuery = true)
-    List<Borrower> findTop5ActiveBorrowersNative();
-
-    @Query("SELECT DISTINCT l.borrower FROM Loan l WHERE l.returnedAt IS NULL AND l.dueAt < CURRENT_TIMESTAMP")
-    List<Borrower> findBorrowersWithOverdueLoans();
-
     Optional<Borrower> findByEmail(String email);
 
     @Modifying
