@@ -53,7 +53,7 @@
               <th>Available</th>
               <th>Available Copies</th>
               <th>Total Copies</th>
-              <th>Actions</th>
+
             </tr>
           </thead>
           <tbody>
@@ -74,7 +74,11 @@
                 </span>
               </td>
               <td>{{ book.availableCopies }}</td>
-              <td>{{ book.totalCopies }}</td>
+
+              <td>
+                <input v-if="editingId === book.id" v-model.number="editTotalCopies" type="number" class="form-control" min="1">
+                <span v-else>{{ book.totalCopies }}</span>
+              </td>
               <td>
                 <div v-if="editingId === book.id">
                   <button @click="saveEdit(book.id)" class="btn btn-success btn-sm me-2">Save</button>
@@ -103,7 +107,9 @@ const genres = ref([]);
 const searchTerm = ref('');
 const editingId = ref(null);
 const editTitle = ref('');
+
 const editDescription = ref('');
+const editTotalCopies = ref(0);
 const newBook = ref({
   title: '',
   authorId: '',
@@ -189,6 +195,7 @@ const startEdit = (book) => {
   editingId.value = book.id;
   editTitle.value = book.title;
   editDescription.value = book.description || '';
+  editTotalCopies.value = book.totalCopies;
 };
 
 const cancelEdit = () => {
@@ -198,13 +205,15 @@ const cancelEdit = () => {
 const saveEdit = async (id) => {
   try {
     const book = books.value.find(b => b.id === id);
+    const copyDifference = editTotalCopies.value - book.totalCopies;
+    
     await api.put(`/books/${id}`, { 
       title: editTitle.value,
       description: editDescription.value || null,
       author: book.author,
       genre: book.genre,
-      totalCopies: book.totalCopies,
-      availableCopies: book.availableCopies
+      totalCopies: editTotalCopies.value,
+      availableCopies: book.availableCopies + copyDifference
     });
     editingId.value = null;
     loadBooks();

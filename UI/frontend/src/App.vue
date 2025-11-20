@@ -23,6 +23,9 @@
             <li class="nav-item">
               <router-link class="nav-link" to="/borrowers">Borrowers</router-link>
             </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/suggestions">Suggestions</router-link>
+            </li>
           </ul>
         </div>
       </div>

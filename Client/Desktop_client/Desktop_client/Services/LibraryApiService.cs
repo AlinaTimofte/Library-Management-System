@@ -13,7 +13,10 @@ namespace Desktop_client.Services
     {
         private static readonly HttpClient client = new HttpClient();
         private static readonly JsonSerializerOptions jsonOptions =
-            new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+            new JsonSerializerOptions { 
+                PropertyNameCaseInsensitive = true,
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase 
+            };
 
         public LibraryApiService()
         {
@@ -126,6 +129,19 @@ namespace Desktop_client.Services
 
             string body = await response.Content.ReadAsStringAsync();
             return JsonSerializer.Deserialize<List<Loan>>(body, jsonOptions);
+        }
+
+        // Add Suggestion: POST /api/suggestions
+        public async Task<Suggestion> AddSuggestionAsync(Suggestion suggestion)
+        {
+            string json = JsonSerializer.Serialize(suggestion, jsonOptions);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = await client.PostAsync("api/suggestions", content);
+            if (!response.IsSuccessStatusCode) return null;
+
+            string body = await response.Content.ReadAsStringAsync();
+            return JsonSerializer.Deserialize<Suggestion>(body, jsonOptions);
         }
     }
 }

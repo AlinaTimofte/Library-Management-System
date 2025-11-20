@@ -20,6 +20,7 @@ namespace Desktop_client
         public WelcomeForm()
         {
             InitializeComponent();
+            this.Size = new Size(1000, 600);
             _apiService = new LibraryApiService(); // Initialize the service
         }
 

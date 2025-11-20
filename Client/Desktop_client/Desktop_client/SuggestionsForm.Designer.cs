@@ -38,9 +38,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.DescriptionTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.SaveInsertionButton = new System.Windows.Forms.Button();
             this.ExitAppButton = new System.Windows.Forms.Button();
             this.GoToProfileButton = new System.Windows.Forms.Button();
+            this.SendDataButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label4
@@ -171,25 +171,11 @@
             this.label5.TabIndex = 22;
             this.label5.Text = "Description";
             // 
-            // SaveInsertionButton
-            // 
-            this.SaveInsertionButton.BackColor = System.Drawing.Color.RosyBrown;
-            this.SaveInsertionButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SaveInsertionButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SaveInsertionButton.Font = new System.Drawing.Font("Palatino Linotype", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveInsertionButton.Location = new System.Drawing.Point(672, 766);
-            this.SaveInsertionButton.Name = "SaveInsertionButton";
-            this.SaveInsertionButton.Size = new System.Drawing.Size(196, 96);
-            this.SaveInsertionButton.TabIndex = 23;
-            this.SaveInsertionButton.Text = "Save";
-            this.SaveInsertionButton.UseVisualStyleBackColor = false;
-            // 
             // ExitAppButton
             // 
-            this.ExitAppButton.BackColor = System.Drawing.Color.RosyBrown;
-            this.ExitAppButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ExitAppButton.BackColor = System.Drawing.Color.IndianRed;
             this.ExitAppButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExitAppButton.Font = new System.Drawing.Font("Palatino Linotype", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitAppButton.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExitAppButton.Location = new System.Drawing.Point(1778, 906);
             this.ExitAppButton.Name = "ExitAppButton";
             this.ExitAppButton.Size = new System.Drawing.Size(196, 96);
@@ -200,11 +186,11 @@
             // 
             // GoToProfileButton
             // 
-            this.GoToProfileButton.BackColor = System.Drawing.Color.RosyBrown;
+            this.GoToProfileButton.BackColor = System.Drawing.Color.Olive;
             this.GoToProfileButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.GoToProfileButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GoToProfileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.GoToProfileButton.Font = new System.Drawing.Font("Palatino Linotype", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GoToProfileButton.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GoToProfileButton.Location = new System.Drawing.Point(1778, 766);
             this.GoToProfileButton.Name = "GoToProfileButton";
             this.GoToProfileButton.Size = new System.Drawing.Size(196, 96);
@@ -213,16 +199,31 @@
             this.GoToProfileButton.UseVisualStyleBackColor = false;
             this.GoToProfileButton.Click += new System.EventHandler(this.GoToProfileButton_Click);
             // 
+            // SendDataButton
+            // 
+            this.SendDataButton.BackColor = System.Drawing.Color.RosyBrown;
+            this.SendDataButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.SendDataButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SendDataButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SendDataButton.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SendDataButton.Location = new System.Drawing.Point(856, 766);
+            this.SendDataButton.Name = "SendDataButton";
+            this.SendDataButton.Size = new System.Drawing.Size(196, 96);
+            this.SendDataButton.TabIndex = 27;
+            this.SendDataButton.Text = "Send";
+            this.SendDataButton.UseVisualStyleBackColor = false;
+            this.SendDataButton.Click += new System.EventHandler(this.SendDataButton_Click);
+            // 
             // SuggestionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Desktop_client.Properties.Resources.welcome_page;
+            this.BackgroundImage = global::Desktop_client.Properties.Resources.ok;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(2137, 1139);
+            this.Controls.Add(this.SendDataButton);
             this.Controls.Add(this.GoToProfileButton);
             this.Controls.Add(this.ExitAppButton);
-            this.Controls.Add(this.SaveInsertionButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.DescriptionTextBox);
             this.Controls.Add(this.label2);
@@ -234,6 +235,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Name = "SuggestionsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SuggestionsForm";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -252,8 +254,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox DescriptionTextBox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button SaveInsertionButton;
         private System.Windows.Forms.Button ExitAppButton;
         private System.Windows.Forms.Button GoToProfileButton;
+        private System.Windows.Forms.Button SendDataButton;
     }
 }

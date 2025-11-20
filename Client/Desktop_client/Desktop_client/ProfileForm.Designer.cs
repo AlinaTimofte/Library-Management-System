@@ -84,7 +84,7 @@
             this.AuthorComboBox.Font = new System.Drawing.Font("Palatino Linotype", 13.875F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AuthorComboBox.FormattingEnabled = true;
             this.AuthorComboBox.Location = new System.Drawing.Point(1900, 119);
-            this.AuthorComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AuthorComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.AuthorComboBox.Name = "AuthorComboBox";
             this.AuthorComboBox.Size = new System.Drawing.Size(476, 57);
             this.AuthorComboBox.TabIndex = 4;
@@ -128,7 +128,7 @@
             this.BooksComboBox.Font = new System.Drawing.Font("Palatino Linotype", 13.875F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BooksComboBox.FormattingEnabled = true;
             this.BooksComboBox.Location = new System.Drawing.Point(1168, 119);
-            this.BooksComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BooksComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.BooksComboBox.Name = "BooksComboBox";
             this.BooksComboBox.Size = new System.Drawing.Size(476, 57);
             this.BooksComboBox.TabIndex = 7;
@@ -139,7 +139,7 @@
             this.DescriptionTextBox.BackColor = System.Drawing.Color.Linen;
             this.DescriptionTextBox.Font = new System.Drawing.Font("Palatino Linotype", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DescriptionTextBox.Location = new System.Drawing.Point(1324, 477);
-            this.DescriptionTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DescriptionTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.DescriptionTextBox.Multiline = true;
             this.DescriptionTextBox.Name = "DescriptionTextBox";
             this.DescriptionTextBox.ReadOnly = true;
@@ -152,9 +152,9 @@
             this.ReserveButton.BackColor = System.Drawing.Color.RosyBrown;
             this.ReserveButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ReserveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ReserveButton.Font = new System.Drawing.Font("Palatino Linotype", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReserveButton.Font = new System.Drawing.Font("Palatino Linotype", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReserveButton.Location = new System.Drawing.Point(2290, 821);
-            this.ReserveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ReserveButton.Margin = new System.Windows.Forms.Padding(4);
             this.ReserveButton.Name = "ReserveButton";
             this.ReserveButton.Size = new System.Drawing.Size(196, 96);
             this.ReserveButton.TabIndex = 9;
@@ -168,7 +168,7 @@
             this.UserCollectionComboBox.Font = new System.Drawing.Font("Palatino Linotype", 13.875F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserCollectionComboBox.FormattingEnabled = true;
             this.UserCollectionComboBox.Location = new System.Drawing.Point(92, 119);
-            this.UserCollectionComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UserCollectionComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.UserCollectionComboBox.Name = "UserCollectionComboBox";
             this.UserCollectionComboBox.Size = new System.Drawing.Size(476, 57);
             this.UserCollectionComboBox.TabIndex = 11;
@@ -195,7 +195,7 @@
             this.DueAtTextBox.BackColor = System.Drawing.Color.Linen;
             this.DueAtTextBox.Font = new System.Drawing.Font("Palatino Linotype", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DueAtTextBox.Location = new System.Drawing.Point(92, 617);
-            this.DueAtTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DueAtTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.DueAtTextBox.Name = "DueAtTextBox";
             this.DueAtTextBox.Size = new System.Drawing.Size(468, 57);
             this.DueAtTextBox.TabIndex = 13;
@@ -221,9 +221,9 @@
             this.ReturnButton.BackColor = System.Drawing.Color.RosyBrown;
             this.ReturnButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ReturnButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ReturnButton.Font = new System.Drawing.Font("Palatino Linotype", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReturnButton.Font = new System.Drawing.Font("Palatino Linotype", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReturnButton.Location = new System.Drawing.Point(660, 600);
-            this.ReturnButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ReturnButton.Margin = new System.Windows.Forms.Padding(4);
             this.ReturnButton.Name = "ReturnButton";
             this.ReturnButton.Size = new System.Drawing.Size(196, 96);
             this.ReturnButton.TabIndex = 15;
@@ -233,14 +233,14 @@
             // 
             // SuggestionsButton
             // 
-            this.SuggestionsButton.BackColor = System.Drawing.Color.RosyBrown;
+            this.SuggestionsButton.BackColor = System.Drawing.Color.Thistle;
             this.SuggestionsButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SuggestionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SuggestionsButton.Font = new System.Drawing.Font("Palatino Linotype", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SuggestionsButton.Font = new System.Drawing.Font("Palatino Linotype", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SuggestionsButton.Location = new System.Drawing.Point(2198, 1121);
-            this.SuggestionsButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SuggestionsButton.Margin = new System.Windows.Forms.Padding(4);
             this.SuggestionsButton.Name = "SuggestionsButton";
-            this.SuggestionsButton.Size = new System.Drawing.Size(196, 96);
+            this.SuggestionsButton.Size = new System.Drawing.Size(225, 96);
             this.SuggestionsButton.TabIndex = 16;
             this.SuggestionsButton.Text = "Suggestions";
             this.SuggestionsButton.UseVisualStyleBackColor = false;
@@ -248,12 +248,12 @@
             // 
             // ExitAppButton
             // 
-            this.ExitAppButton.BackColor = System.Drawing.Color.RosyBrown;
+            this.ExitAppButton.BackColor = System.Drawing.Color.IndianRed;
             this.ExitAppButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ExitAppButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExitAppButton.Font = new System.Drawing.Font("Palatino Linotype", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitAppButton.Font = new System.Drawing.Font("Palatino Linotype", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExitAppButton.Location = new System.Drawing.Point(1890, 1121);
-            this.ExitAppButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ExitAppButton.Margin = new System.Windows.Forms.Padding(4);
             this.ExitAppButton.Name = "ExitAppButton";
             this.ExitAppButton.Size = new System.Drawing.Size(196, 96);
             this.ExitAppButton.TabIndex = 17;
@@ -266,7 +266,7 @@
             this.RefreshButton.BackColor = System.Drawing.Color.RosyBrown;
             this.RefreshButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RefreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RefreshButton.Font = new System.Drawing.Font("Palatino Linotype", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RefreshButton.Font = new System.Drawing.Font("Palatino Linotype", 10.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RefreshButton.Location = new System.Drawing.Point(671, 102);
             this.RefreshButton.Margin = new System.Windows.Forms.Padding(4);
             this.RefreshButton.Name = "RefreshButton";
@@ -299,7 +299,7 @@
             this.Controls.Add(this.AuthorComboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ProfileForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProfileForm";

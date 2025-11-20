@@ -29,6 +29,7 @@ namespace Desktop_client
 
         public ProfileForm(Borrower borrower) : this()
         {
+            this.Size = new Size(1300, 700);
             this.borrower = borrower;
             this.Text = $"Profile - {borrower.Name}";
             LoadData();
@@ -227,8 +228,9 @@ namespace Desktop_client
 
         private void SuggestionsButton_Click(object sender, EventArgs e)
         {
-            var suggestionsForm = new SuggestionsForm();
+            var suggestionsForm = new SuggestionsForm(borrower);
             suggestionsForm.Show();
+            this.Hide();
         }
     }
 }

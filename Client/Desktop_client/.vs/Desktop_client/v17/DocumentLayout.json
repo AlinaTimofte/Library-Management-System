@@ -3,109 +3,133 @@
   "WorkspaceRootPath": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|c:\\facultate\\scd\\proiect\\library-management-system\\client\\desktop_client\\desktop_client\\profileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|solutionrelative:desktop_client\\profileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\desktop_client\\suggestionsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|solutionrelative:desktop_client\\suggestionsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|c:\\facultate\\scd\\proiect\\library-management-system\\client\\desktop_client\\desktop_client\\suggestionsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|solutionrelative:desktop_client\\suggestionsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\desktop_client\\profileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|solutionrelative:desktop_client\\profileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|c:\\facultate\\scd\\proiect\\library-management-system\\client\\desktop_client\\desktop_client\\suggestionsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|solutionrelative:desktop_client\\suggestionsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\desktop_client\\welcomeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|solutionrelative:desktop_client\\welcomeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|c:\\facultate\\scd\\proiect\\library-management-system\\client\\desktop_client\\desktop_client\\profileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|solutionrelative:desktop_client\\profileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|c:\\facultate\\scd\\proiect\\library-management-system\\client\\desktop_client\\desktop_client\\models\\borrowrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|solutionrelative:desktop_client\\models\\borrowrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\desktop_client\\welcomeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|solutionrelative:desktop_client\\welcomeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|c:\\facultate\\scd\\proiect\\library-management-system\\client\\desktop_client\\desktop_client\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|solutionrelative:desktop_client\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\desktop_client\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|solutionrelative:desktop_client\\registerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|c:\\facultate\\scd\\proiect\\library-management-system\\client\\desktop_client\\desktop_client\\welcomeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|solutionrelative:desktop_client\\welcomeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|c:\\facultate\\scd\\proiect\\library-management-system\\client\\desktop_client\\desktop_client\\welcomeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|solutionrelative:desktop_client\\welcomeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|c:\\facultate\\scd\\proiect\\library-management-system\\client\\desktop_client\\desktop_client\\profileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B1624D81-7294-4797-96ED-9743118E7E53}|Desktop_client\\Desktop_client.csproj|solutionrelative:desktop_client\\profileform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 0,
+      "Orientation": 1,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "DockedHeight": 200,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SuggestionsForm.cs",
-              "DocumentMoniker": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\SuggestionsForm.cs",
-              "RelativeDocumentMoniker": "Desktop_client\\SuggestionsForm.cs",
-              "ToolTip": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\SuggestionsForm.cs",
-              "RelativeToolTip": "Desktop_client\\SuggestionsForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAwAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "WelcomeForm.cs",
+              "DocumentMoniker": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\WelcomeForm.cs",
+              "RelativeDocumentMoniker": "Desktop_client\\WelcomeForm.cs",
+              "ToolTip": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\WelcomeForm.cs",
+              "RelativeToolTip": "Desktop_client\\WelcomeForm.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T14:55:07.9Z",
+              "WhenOpened": "2025-11-20T13:37:01.152Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
+              "Title": "WelcomeForm.cs [Design]",
+              "DocumentMoniker": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\WelcomeForm.cs",
+              "RelativeDocumentMoniker": "Desktop_client\\WelcomeForm.cs",
+              "ToolTip": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\WelcomeForm.cs [Design]",
+              "RelativeToolTip": "Desktop_client\\WelcomeForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T13:36:59.598Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProfileForm.cs",
+              "DocumentMoniker": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\ProfileForm.cs",
+              "RelativeDocumentMoniker": "Desktop_client\\ProfileForm.cs",
+              "ToolTip": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\ProfileForm.cs",
+              "RelativeToolTip": "Desktop_client\\ProfileForm.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T13:36:46.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RegisterForm.cs",
+              "DocumentMoniker": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\RegisterForm.cs",
+              "RelativeDocumentMoniker": "Desktop_client\\RegisterForm.cs",
+              "ToolTip": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\RegisterForm.cs",
+              "RelativeToolTip": "Desktop_client\\RegisterForm.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T13:36:29.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ProfileForm.cs [Design]",
               "DocumentMoniker": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\ProfileForm.cs",
               "RelativeDocumentMoniker": "Desktop_client\\ProfileForm.cs",
               "ToolTip": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\ProfileForm.cs [Design]",
               "RelativeToolTip": "Desktop_client\\ProfileForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T17:34:11.698Z",
+              "WhenOpened": "2025-11-20T13:33:36.205Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BorrowRequest.cs",
-              "DocumentMoniker": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\Models\\BorrowRequest.cs",
-              "RelativeDocumentMoniker": "Desktop_client\\Models\\BorrowRequest.cs",
-              "ToolTip": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\Models\\BorrowRequest.cs",
-              "RelativeToolTip": "Desktop_client\\Models\\BorrowRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T12:41:01.17Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProfileForm.cs",
-              "DocumentMoniker": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\ProfileForm.cs",
-              "RelativeDocumentMoniker": "Desktop_client\\ProfileForm.cs",
-              "ToolTip": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\ProfileForm.cs",
-              "RelativeToolTip": "Desktop_client\\ProfileForm.cs",
-              "ViewState": "AgIAAMYAAACgZmZmZiYwwOYAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T20:26:12.295Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "WelcomeForm.cs",
-              "DocumentMoniker": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\WelcomeForm.cs",
-              "RelativeDocumentMoniker": "Desktop_client\\WelcomeForm.cs",
-              "ToolTip": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\WelcomeForm.cs",
-              "RelativeToolTip": "Desktop_client\\WelcomeForm.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Title": "RegisterForm.cs [Design]",
+              "DocumentMoniker": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\RegisterForm.cs",
+              "RelativeDocumentMoniker": "Desktop_client\\RegisterForm.cs",
+              "ToolTip": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\RegisterForm.cs [Design]",
+              "RelativeToolTip": "Desktop_client\\RegisterForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T19:49:13.234Z",
+              "WhenOpened": "2025-11-17T17:33:40.855Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SuggestionsForm.cs",
+              "DocumentMoniker": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\SuggestionsForm.cs",
+              "RelativeDocumentMoniker": "Desktop_client\\SuggestionsForm.cs",
+              "ToolTip": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\SuggestionsForm.cs",
+              "RelativeToolTip": "Desktop_client\\SuggestionsForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T13:45:17.697Z",
               "EditorCaption": ""
             },
             {
@@ -117,31 +141,8 @@
               "ToolTip": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\SuggestionsForm.cs [Design]",
               "RelativeToolTip": "Desktop_client\\SuggestionsForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T18:23:04.085Z",
+              "WhenOpened": "2025-11-20T13:35:53.774Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "WelcomeForm.cs [Design]",
-              "DocumentMoniker": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\WelcomeForm.cs",
-              "RelativeDocumentMoniker": "Desktop_client\\WelcomeForm.cs",
-              "ToolTip": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\WelcomeForm.cs [Design]",
-              "RelativeToolTip": "Desktop_client\\WelcomeForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T17:33:55.777Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "RegisterForm.cs [Design]",
-              "DocumentMoniker": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\RegisterForm.cs",
-              "RelativeDocumentMoniker": "Desktop_client\\RegisterForm.cs",
-              "ToolTip": "C:\\facultate\\SCD\\proiect\\Library-Management-System\\Client\\Desktop_client\\Desktop_client\\RegisterForm.cs [Design]",
-              "RelativeToolTip": "Desktop_client\\RegisterForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T17:33:40.855Z"
             }
           ]
         }

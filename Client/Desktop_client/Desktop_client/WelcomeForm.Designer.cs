@@ -195,6 +195,7 @@
             this.Controls.Add(this.label1);
             this.Name = "WelcomeForm";
             this.RightToLeftLayout = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WelcomeForm";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -4,6 +4,7 @@ import BooksView from '../views/BooksView.vue';
 import AuthorsView from '../views/AuthorsView.vue';
 import BorrowersView from '../views/BorrowersView.vue';
 import GenresView from '../views/GenresView.vue';
+import SuggestionsView from '../views/SuggestionsView.vue';
 
 const routes = [
   { path: '/', component: Dashboard },
@@ -11,6 +12,7 @@ const routes = [
   { path: '/authors', component: AuthorsView },
   { path: '/genres', component: GenresView },
   { path: '/borrowers', component: BorrowersView },
+  { path: '/suggestions', component: SuggestionsView },
 ];
 
 const router = createRouter({

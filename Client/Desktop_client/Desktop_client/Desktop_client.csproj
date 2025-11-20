@@ -83,6 +83,7 @@
     <Compile Include="Models\Borrower.cs" />
     <Compile Include="Models\BorrowRequest.cs" />
     <Compile Include="Models\Loan.cs" />
+    <Compile Include="Models\Suggestion.cs" />
     <Compile Include="ProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +158,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\profile page.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ok.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

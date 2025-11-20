@@ -17,6 +17,7 @@ namespace Desktop_client
         public RegisterForm()
         {
             InitializeComponent();
+            this.Size = new Size(1000, 600);
             _apiService = new LibraryApiService();
             this.GoToMainPageButton.Click += GoToMainPageButton_Click;
         }
