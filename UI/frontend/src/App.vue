@@ -26,6 +26,9 @@
             <li class="nav-item">
               <router-link class="nav-link" to="/suggestions">Suggestions</router-link>
             </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/ai-suggestions">AI Suggestions</router-link>
+            </li>
           </ul>
         </div>
       </div>
