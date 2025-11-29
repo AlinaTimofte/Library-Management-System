@@ -70,7 +70,10 @@ const overdueBorrowers = ref([]);
 const topActiveBorrowers = ref([]);
 
 const borrowedCount = computed(() => {
-  return borrowers.value.filter(b => b.currentBook != null).length;
+  return borrowers.value.reduce((acc, b) => {
+    const activeLoans = b.loans ? b.loans.filter(l => l.returnedAt === null).length : 0;
+    return acc + activeLoans;
+  }, 0);
 });
 
 onMounted(async () => {
